@@ -1,0 +1,489 @@
+/* .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+    0% {
+    transform: rotate(0deg);
+    }
+    100% {
+    transform: rotate(360deg);
+    }
+}
+
+@keyframes loading-overlay {
+    0% {
+        z-index: 2;
+        background-color: rgba(0,0,0,0.5);
+    }
+    99% {
+        z-index: 2;
+        background-color: rgba(0,0,0,0.5);
+    }
+    100% {
+        z-index: -1;
+        background-color: transparent;
+    }
+}
+
+#overlay {
+    position: fixed; 
+    width: 100%; 
+    height: 100%; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); 
+    z-index: 2; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: loading-overlay 3s forwards;
+} */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* Pages Menu*/
+}
+html h1, html h2, html span, body h1, body h2, body span {
+  font-family: "Shrikhand", sans-serif;
+}
+html p, body p {
+  font-family: "Roboto", sans-serif;
+  margin: unset;
+}
+html a, body a {
+  text-decoration: none;
+  /* TODO enlever couleur des liens */
+}
+html button, body button {
+  height: 50px;
+  background: #9356DC;
+  border-radius: 30px;
+  cursor: pointer;
+  border: none;
+  padding: 0 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.4s;
+  color: #fff;
+  font-size: large;
+  font-weight: 700;
+  transition: all 450ms;
+  transform: scale(1);
+}
+html button a, body button a {
+  color: white;
+}
+html button:hover, body button:hover {
+  background: #bc95e9;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 33px 15px rgba(0, 0, 0, 0.3);
+}
+html header, body header {
+  display: flex;
+  flex-direction: column;
+  align-items: initial;
+  margin-bottom: 50px;
+}
+html header #logo-wrapper, body header #logo-wrapper {
+  display: flex;
+  padding: 15px;
+  justify-content: center;
+}
+html header #logo-wrapper #arrow-accueil, body header #logo-wrapper #arrow-accueil {
+  display: none;
+}
+html header #logo-wrapper img, body header #logo-wrapper img {
+  height: 35px;
+  width: 55%;
+}
+html header #logo-wrapper i, body header #logo-wrapper i {
+  color: black;
+  right: 45px;
+  top: 5px;
+  position: relative;
+  font-size: x-large;
+}
+html header #hl-margintop, body header #hl-margintop {
+  height: 4px;
+  background-color: rgb(211, 211, 211);
+}
+html header #header-location, body header #header-location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  background-color: rgb(234, 234, 234);
+}
+html header #header-location i, body header #header-location i {
+  margin-right: 15px;
+  cursor: pointer;
+}
+html header #header-location p, body header #header-location p {
+  font-weight: 500;
+}
+html header #header-explorer, body header #header-explorer {
+  background-color: rgb(246, 246, 246);
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 45px 15px;
+  text-align: center;
+}
+html header #header-explorer > p:first-child, body header #header-explorer > p:first-child {
+  font-size: x-large;
+  font-weight: 800;
+  /* TODO centrer 2e ligne */
+}
+html header #header-explorer > p:nth-child(2), body header #header-explorer > p:nth-child(2) {
+  font-size: larger;
+}
+html #main-index > p, body #main-index > p {
+  font-size: xx-large;
+  font-weight: 900;
+  margin: 0 0 30px 15px;
+}
+html #main-index #main-process, body #main-index #main-process {
+  margin-bottom: 50px;
+}
+html #main-index .main-list, body #main-index .main-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin-left: 13%;
+  margin-bottom: 25px;
+  height: 60px;
+  background-color: rgb(246, 246, 246);
+  border-radius: 20px;
+  padding: 0 px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  cursor: pointer;
+}
+html #main-index .main-list .main-numbers, body #main-index .main-list .main-numbers {
+  color: white;
+  background-color: #9356DC;
+  padding: 10px;
+  border-radius: 50%;
+  position: relative;
+  right: 20px;
+}
+html #main-index .main-list i, body #main-index .main-list i {
+  color: #7e7e7e;
+}
+html #main-index .main-list p, body #main-index .main-list p {
+  font-size: larger;
+  font-weight: 600;
+  padding-right: 30px;
+}
+html #main-index #main-menu, body #main-index #main-menu {
+  width: 100%;
+  height: auto;
+  background-color: rgb(246, 246, 246);
+  padding-bottom: 50px;
+}
+html #main-index #main-menu > p, body #main-index #main-menu > p {
+  font-size: xx-large;
+  font-weight: 900;
+  margin: 0 0 30px 15px;
+}
+html #main-index #main-menu > p, body #main-index #main-menu > p {
+  padding-top: 50px;
+  margin-bottom: 25px;
+}
+html #main-index #main-menu .menu-cards, body #main-index #main-menu .menu-cards {
+  padding: 10px 10px 0 10px;
+}
+html #main-index #main-menu .menu-cards .card-image, body #main-index #main-menu .menu-cards .card-image {
+  width: 100%;
+  height: 200px;
+}
+html #main-index #main-menu .menu-cards .card-image img, body #main-index #main-menu .menu-cards .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+html #main-index #main-menu .menu-cards .card-image > p, body #main-index #main-menu .menu-cards .card-image > p {
+  position: relative;
+  left: 250px;
+  bottom: 180px;
+  justify-self: center;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 30px;
+  background-color: #99E2D0;
+  color: rgb(24, 149, 118);
+  font-weight: 600;
+  height: 30px;
+  width: 90px;
+}
+html #main-index #main-menu .menu-cards .card-text, body #main-index #main-menu .menu-cards .card-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 20px 0 0 20px;
+  background-color: white;
+  border-radius: 0 0 20px 20px;
+  width: auto;
+  height: 70px;
+}
+html #main-index #main-menu .menu-cards .card-text div > p:first-child, body #main-index #main-menu .menu-cards .card-text div > p:first-child {
+  font-size: x-large;
+  font-weight: 600;
+}
+html #main-index #main-menu .menu-cards .card-text div > p:nth-child(2), body #main-index #main-menu .menu-cards .card-text div > p:nth-child(2) {
+  font-size: larger;
+}
+html #main-index #main-menu .menu-cards .card-text i, body #main-index #main-menu .menu-cards .card-text i {
+  font-size: xx-large;
+}
+html #main-index #main-menu .menu-cards .card-text .card-heart, body #main-index #main-menu .menu-cards .card-text .card-heart {
+  cursor: pointer;
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+html #main-index #main-menu .menu-cards .card-text .card-heart:hover i:last-child, body #main-index #main-menu .menu-cards .card-text .card-heart:hover i:last-child {
+  transform: scale(0);
+}
+html #main-index #main-menu .menu-cards .card-text .card-heart:hover i:first-child, body #main-index #main-menu .menu-cards .card-text .card-heart:hover i:first-child {
+  transform: scale(1);
+}
+html #main-index #main-menu .menu-cards .card-text .card-heart .fas, body #main-index #main-menu .menu-cards .card-text .card-heart .fas {
+  position: absolute;
+  transform: scale(0);
+  transition: transform 1s;
+  background-image: linear-gradient(180deg, #9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+html #main-index #main-menu .menu-cards .card-text .card-heart .far, body #main-index #main-menu .menu-cards .card-text .card-heart .far {
+  position: absolute;
+  transform: scale(1);
+  transition: transform 0.3s;
+  -webkit-text-stroke: 1px white;
+}
+html header .menu-image, body header .menu-image {
+  height: 250px;
+  object-fit: cover;
+  z-index: -2;
+}
+html .details-menu, body .details-menu {
+  width: auto;
+  height: auto;
+  background-color: rgb(246, 246, 246);
+  padding: 25px;
+  margin-top: -100px;
+  border-radius: 30px 30px 0 0;
+  display: flex;
+  flex-direction: column;
+}
+html .details-menu button, body .details-menu button {
+  margin-top: 20px;
+  align-self: center;
+}
+html .details-menu .menu-title, body .details-menu .menu-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+html .details-menu .card-heart, body .details-menu .card-heart {
+  cursor: pointer;
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+html .details-menu .card-heart:hover i:last-child, body .details-menu .card-heart:hover i:last-child {
+  transform: scale(0);
+}
+html .details-menu .card-heart:hover i:first-child, body .details-menu .card-heart:hover i:first-child {
+  transform: scale(1);
+}
+html .details-menu .card-heart .fas, body .details-menu .card-heart .fas {
+  position: absolute;
+  transform: scale(0);
+  transition: transform 1s;
+  background-image: linear-gradient(180deg, #9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+html .details-menu .card-heart .far, body .details-menu .card-heart .far {
+  position: absolute;
+  transform: scale(1);
+  transition: transform 0.3s;
+  -webkit-text-stroke: 1px white;
+}
+html .details-menu .menu-underline, body .details-menu .menu-underline {
+  display: inline-block;
+  width: max-content;
+  position: relative;
+  margin-top: 30px;
+  cursor: context-menu;
+}
+html .details-menu .menu-underline::before, body .details-menu .menu-underline::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  background-color: #99E2D0;
+  transition: width 0.4s ease-in-out;
+}
+html .details-menu .menu-underline:hover::before, body .details-menu .menu-underline:hover::before {
+  position: absolute;
+  width: 100%;
+}
+html .details-menu .card-dishes, body .details-menu .card-dishes {
+  margin-top: 20px;
+  width: auto;
+  height: 60px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 15px;
+  cursor: pointer;
+}
+html .details-menu .card-dishes > p, body .details-menu .card-dishes > p {
+  font-size: larger;
+  font-weight: 600;
+}
+html .details-menu .card-dishes p:last-child, body .details-menu .card-dishes p:last-child {
+  font-weight: 600;
+}
+html .details-menu .card-dishes .dishes-price, body .details-menu .card-dishes .dishes-price {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  transform: translate(0);
+  transition: transform 0.5s;
+}
+html .details-menu .card-dishes .dishes-price:hover, body .details-menu .card-dishes .dishes-price:hover {
+  width: 80%;
+}
+html .details-menu .card-dishes .dishes-price:hover i, body .details-menu .card-dishes .dishes-price:hover i {
+  transform: rotate(360deg);
+}
+html .details-menu .card-dishes .dishes-price:hover > p:nth-child(2), body .details-menu .card-dishes .dishes-price:hover > p:nth-child(2) {
+  transform: translateX(-220%);
+}
+html .details-menu .card-dishes i, body .details-menu .card-dishes i {
+  font-size: 23px;
+  transition: transform 0.4s;
+}
+html footer, body footer {
+  padding: 25px;
+  height: 150px;
+  background-color: rgb(53, 53, 53);
+  color: #f2f2f2;
+}
+html footer #footer-title, body footer #footer-title {
+  font-style: italic;
+}
+html footer #footer-menu, body footer #footer-menu {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+html footer #footer-menu i, body footer #footer-menu i {
+  display: block;
+  width: 10px;
+  margin-right: 15px;
+}
+html footer #footer-menu p, body footer #footer-menu p {
+  margin-bottom: 10px;
+}
+html footer #footer-menu a, body footer #footer-menu a {
+  color: white;
+}
+html footer #footer-menu #footer-restaurant, html footer #footer-menu #footer-partners, body footer #footer-menu #footer-restaurant, body footer #footer-menu #footer-partners {
+  display: flex;
+}
+
+@media only screen and (min-width: 628px) {
+  html header #logo-wrapper img, body header #logo-wrapper img {
+    height: 100%;
+    width: 40%;
+  }
+  html header #logo-wrapper i, body header #logo-wrapper i {
+    right: 150px;
+    top: 10px;
+    position: relative;
+    font-size: xxx-large;
+  }
+  html #main-index > p, html #main-menu > p, body #main-index > p, body #main-menu > p {
+    display: flex;
+    justify-content: center;
+  }
+  html #main-process, body #main-process {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 25%;
+  }
+  html #main-index #main-menu .menu-cards, body #main-index #main-menu .menu-cards {
+    padding: 0 20%;
+  }
+  html #main-index #main-menu .menu-cards .card-image > p, body #main-index #main-menu .menu-cards .card-image > p {
+    left: 250px;
+  }
+  html footer, html #footer-menu, body footer, body #footer-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 940px) {
+  html #main-index #main-menu .menu-cards .card-image > p, body #main-index #main-menu .menu-cards .card-image > p {
+    left: 400px;
+  }
+}
+@media only screen and (max-width: 1120px) {
+  html #main-index #main-menu .menu-cards .card-image > p, body #main-index #main-menu .menu-cards .card-image > p {
+    left: 475px;
+  }
+}
+@media only screen and (min-width: 1120px) {
+  html #main-index #main-menu .menu-cards .card-image > p, body #main-index #main-menu .menu-cards .card-image > p {
+    left: 650px;
+  }
+  html .card-text i, body .card-text i {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
