@@ -1,6 +1,15 @@
 $primary_color : #9356DC;
-$secondary_color : #FF79DA ;
+$secondary_color : #FF79DA;
 $tertiary_color : #99E2D0;
+$mixed_color : $primary_color, $secondary_color;
+// $linear: linear-gradient(to left, $mixed_color);
+
+@mixin gradient($direction, $list){
+    background: -webkit-linear-gradient($direction, $list);
+    background: -moz-linear-gradient($direction, $list);
+    background: -o-linear-gradient($direction, $list);
+    background: linear-gradient($direction, $list);
+}
 
 /* .lds-ring {
     display: inline-block;
@@ -83,11 +92,10 @@ html, body {
     }
     a{
         text-decoration:none; 
-        /* TODO enlever couleur des liens */
     }
     button{
         height: 50px;
-        background: $primary_color;
+        @include gradient(right, $mixed_color);
         border-radius: 30px;
         cursor: pointer;
         border: none;
@@ -97,26 +105,23 @@ html, body {
         color: #fff;
         font-size: large;
         font-weight: 700;
-        transition: all 450ms;
+        transition: all 750ms;
         transform: scale(1);
         a{
             color: white;
         }
         &:hover{                    
-            background: lighten($primary_color, 15%);
-            transform: scale(1.05);
+            background: lighten($primary_color, 20%);
+            transform: scale(1.15);
             box-shadow: 0px 0px 33px 15px rgb(0,0,0,0.3);
-            
         }
     }    
 
     header{
-
         display: flex;
         flex-direction: column;
         align-items: initial;
         margin-bottom: 50px;
-
         #logo-wrapper{
             display: flex;
             padding: 15px;
@@ -146,7 +151,6 @@ html, body {
             align-items: center;
             height: 45px;
             background-color: rgba(234,234,234,255);
-
             i{
                 margin-right: 15px;
                 cursor: pointer;
@@ -172,10 +176,8 @@ html, body {
             & > p:nth-child(2){
                 font-size: larger;
             }
-            
         }
     }
-
     #main-index{
         & >p{
             font-size: xx-large;
@@ -185,28 +187,27 @@ html, body {
         #main-process{
             margin-bottom: 50px;
         }
-
         .main-list{
             display: flex;
             justify-content: space-around;
             align-items: center;
-            width: 80%;
-            margin-left: 13%;
+            width: 100%;
+            margin: auto;
             margin-bottom: 25px;
             height: 60px;
             background-color: rgba(246,246,246,255);
             border-radius: 20px;
-            padding: 0 px;
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
             transition: 0.3s;
+            position: relative;
             cursor: pointer;
             .main-numbers{
                 color: white;
                 background-color: #9356DC;
                 padding: 10px;
                 border-radius: 50%;
-                position: relative;
-                right: 20px;
+                position: absolute;
+                left: -5%;
             }
             i{
                 color: #7e7e7e;
@@ -216,34 +217,27 @@ html, body {
                 font-weight: 600;
                 padding-right: 30px;
             }
-            
         }
-
         #main-menu{
             width: 100%;
             height: auto;
             background-color: rgba(246,246,246,255);
             padding-bottom: 50px;
-
             & > p{
                 font-size: xx-large;
                 font-weight: 900;
                 margin: 0 0 30px 15px;
             }
-
             & > p{
                 padding-top: 50px;
                 margin-bottom: 25px;
             }
             .menu-cards{
-                
                 padding: 10px 10px 0 10px ;
-                
                 .card-image{
                     width: 100%;
                     height: 200px;
                     position: relative;
-                    
                     img{
                         width: 100%;
                         height: 100%;
@@ -267,7 +261,6 @@ html, body {
                         font-weight: 600;
                         height: 30px;
                         width: 90px;
-    
                     }
                 }
                 .card-text{
@@ -290,7 +283,6 @@ html, body {
                     i{
                         font-size: xx-large;
                     }
-
                     .card-heart{
                         cursor: pointer;
                         position: relative; 
@@ -320,7 +312,6 @@ html, body {
                     }
                 }
             }
-            
         }
     }
 
@@ -342,22 +333,16 @@ html, body {
             border-radius: 30px 30px 0 0;
             display: flex;
             flex-direction: column;
-
             button{
                 margin-top: 20px;
                 align-self: center;
             }
-
             .menu-title{
                 display: flex;
                 justify-content: space-between;
                 font-size: 30px;
                 margin-bottom: 10px;
                 }
-                // i{
-                //     font-size: x-large;
-                //     align-self: center;
-                // }
                 .card-heart{
                     cursor: pointer;
                     position: relative; 
@@ -384,15 +369,13 @@ html, body {
                         transition: transform 0.3s;
                         -webkit-text-stroke: 1px white;
                     }
-            }
-
+                }
             .menu-underline{
                 display: inline-block;
                 width: max-content;
                 position: relative;
                 margin-top: 30px;
                 cursor: context-menu;
-                
                 &::before{
                     content: '';
                     position: absolute;
@@ -405,10 +388,8 @@ html, body {
                 &:hover::before {
                     position: absolute;
                     width: 100%;
-                
                 }
             }
-
             .card-dishes{
                 margin-top: 20px;
                 width: auto;
@@ -439,11 +420,9 @@ html, body {
                     &:hover > p:nth-child(2){                
                         transform: translateX(-220%);
                     }
-
                 }
                 i{
-                    font-size: 23px; 
-                    
+                    font-size: 23px;
                     transition: transform 0.4s;
                 }
                 
@@ -451,13 +430,11 @@ html, body {
         }
 
     footer{
-        
         padding: 25px;
         height: 150px;
         background-color: rgba(53,53,53,255);
         color: #f2f2f2;
         
-
         #footer-title{
             font-style: italic;
         }
@@ -465,23 +442,19 @@ html, body {
             margin-top: 25px;
             display: flex;
             flex-direction: column;
-
             i{
                 display: block;
                 width: 10px;
                 margin-right: 15px;
             }
-
             p{
                 margin-bottom: 10px;
             }
             a{
                 color: white;
             }
-            
             #footer-restaurant, #footer-partners{
                 display: flex;
-            
             }
         }
     }
@@ -502,24 +475,20 @@ html, body {
                 font-size: xxx-large;
             }
         }
-        
         #main-index, #main-menu{
             & > p{
             display: flex;
             justify-content: center;}
         }
-
         #main-process{
             display: flex;
             flex-direction: column;
             justify-content: center;
             margin: 0 25%;
         }
-
         #main-index #main-menu .menu-cards{
             padding: 0 20%;
         }
-
         footer, #footer-menu{
             display: flex;
             flex-direction: column;
@@ -529,6 +498,19 @@ html, body {
     } 
 }
 
+@media only screen and (max-width: 627px) {
+        
+    html, body{
+        #main-index .main-list{
+            width: 80%;
+            padding-right: unset;
+            justify-content: space-around;
+            p{
+                padding-right: unset;
+            }
+        }
+    }    
+}
 
 
 
