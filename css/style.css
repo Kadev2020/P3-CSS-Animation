@@ -82,10 +82,7 @@ html a, body a {
 }
 html button, body button {
   height: 50px;
-  background: -webkit-linear-gradient(right, #9356DC, #FF79DA);
-  background: -moz-linear-gradient(right, #9356DC, #FF79DA);
-  background: -o-linear-gradient(right, #9356DC, #FF79DA);
-  background: linear-gradient(right, #9356DC, #FF79DA);
+  background: linear-gradient(350deg, #9356dc 50%, #ff79da 100%);
   border-radius: 30px;
   cursor: pointer;
   border: none;
@@ -102,7 +99,7 @@ html button a, body button a {
   color: white;
 }
 html button:hover, body button:hover {
-  background: #c9abee;
+  background: linear-gradient(350deg, #a978e3 50%, #ffa2e5 100%);
   transform: scale(1.15);
   box-shadow: 0px 0px 33px 15px rgba(0, 0, 0, 0.3);
 }
@@ -196,7 +193,7 @@ html #main-index .main-list .main-numbers, body #main-index .main-list .main-num
   padding: 10px;
   border-radius: 50%;
   position: absolute;
-  left: -5%;
+  left: -10px;
 }
 html #main-index .main-list i, body #main-index .main-list i {
   color: #7e7e7e;
@@ -351,6 +348,35 @@ html .details-menu .card-heart .far, body .details-menu .card-heart .far {
   transform: scale(1);
   transition: transform 0.3s;
   -webkit-text-stroke: 1px white;
+}
+@keyframes apparition {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+html .details-menu .menu-entrees, body .details-menu .menu-entrees {
+  animation: apparition 2500ms 1;
+}
+html .details-menu .menu-entrees .main-dishes, body .details-menu .menu-entrees .main-dishes {
+  animation: apparition 5s 1;
+}
+html .details-menu .menu-plats, body .details-menu .menu-plats {
+  animation: apparition 5500ms 1;
+}
+html .details-menu .menu-plats .main-dishes, body .details-menu .menu-plats .main-dishes {
+  animation: apparition 8s 1;
+}
+html .details-menu .menu-desserts, body .details-menu .menu-desserts {
+  animation: apparition 8500ms 1;
+}
+html .details-menu .menu-desserts .main-dishes, body .details-menu .menu-desserts .main-dishes {
+  animation: apparition 10s 1;
 }
 html .details-menu .menu-underline, body .details-menu .menu-underline {
   display: inline-block;
