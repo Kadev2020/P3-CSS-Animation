@@ -211,11 +211,14 @@ html, body {
             cursor: pointer;
             .main-numbers{
                 color: white;
+                width: 15px;
+                height: 15px;
+                text-align: center;
                 background-color: #9356DC;
                 padding: 10px;
                 border-radius: 50%;
                 position: absolute;
-                left: -10px;
+                left: -15px;
             }
             i{
                 color: #7e7e7e;
@@ -378,32 +381,34 @@ html, body {
                         -webkit-text-stroke: 1px white;
                     }
                 }
-                @keyframes apparition {
-                    0% {opacity:0;}
-                    50% {opacity:0;}
-                    100% {opacity:1;}
-                    }
-                    
-                    .menu-entrees {
-                        animation: apparition 2500ms 1;
-                        .main-dishes{
-                            animation: apparition 5s 1;
-                        }
-                    }
 
-                    .menu-plats {
-                        animation: apparition 5500ms 1;
-                        .main-dishes{
-                            animation: apparition 8s 1;
-                        }
-                    }
+            @keyframes apparition {
+                0% {opacity:0;}
+                50% {opacity:0;}
+                100% {opacity:1;}
+                }
+                
+                // TODO raccourci le temp
+            .menu-entrees {
+                animation: apparition 2000ms 1;
+                .main-dishes{
+                    animation: apparition 2500ms 1;
+                }
+            }
 
-                    .menu-desserts {
-                        animation: apparition 8500ms 1;
-                        .main-dishes{
-                            animation: apparition 10s 1;
-                            }
+            .menu-plats {
+                animation: apparition 4000ms 1;
+                .main-dishes{
+                    animation: apparition 4500ms 1;
+                }
+            }
+
+            .menu-desserts {
+                animation: apparition 6000ms 1;
+                .main-dishes{
+                    animation: apparition 6500ms 1;
                     }
+            }
 
 
             .menu-underline{
@@ -427,39 +432,62 @@ html, body {
                 }
             }
             .card-dishes{
+                position: relative;
                 margin-top: 20px;
                 width: auto;
-                height: 60px;
+                height: 80px;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                transition: 0.4s;
                 background-color: white;
                 border-radius: 20px;
                 padding: 15px;
                 cursor: pointer;
-                & > p{
+                white-space: nowrap;
+                & > p:first-child, & > p:last-child{
                     font-size: larger;
                     font-weight: 600;
                 }
-                p:last-child{
-                    font-weight: 600;
+
+                & .dishes-details{
+                    overflow-x: hidden;
+                    text-overflow: ellipsis;
+                    transition: width 0.5s;
                 }
-                .dishes-price{
+                
+                &:hover {
+                    .dishes-price{
+                        left: 80%;
+                    
+                    }
+                }
+                .dishes-details {
                     display: flex;
                     justify-content: space-between;
                     margin-top: 10px;
                     transform: translate(0);
                     transition: transform .5s;
-                    &:hover{
-                        width: 80%;
-                        i {
-                            transform: rotate(360deg);
-                        }
-                    }
-                    &:hover > p:nth-child(2){                
-                        transform: translateX(-220%);
-                    }
                 }
-                i{
+                .dishes-price {
+                    position: absolute; 
+                    left: 95%; 
+                    font-weight: bold;
+                }
+
+                .dishes-check{
+                    position: relative;
+                    left: 100%;
+                    bottom: 50%;
+                    background-color: #99E2D0;
+                    height: 100%;
+                    width: 80px;
+                }
+                i{                                    
+                    position: absolute;
+                    color: white; 
+                    left: 50%;
+                    top: 50%;
                     font-size: 23px;
-                    transition: transform 0.4s;
+                    transform: translate(-50%,-50%);
                 }
                 
             }
@@ -544,6 +572,15 @@ html, body {
             p{
                 padding-right: unset;
             }
+        }
+    }    
+}
+
+@media only screen and (max-width: 720px) {
+        
+    html, body{
+        #main-index .main-list .main-numbers{
+            left: -20px;
         }
     }    
 }
