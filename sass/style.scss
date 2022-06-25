@@ -585,32 +585,26 @@ html, body {
     }    
 }
 
-// modifications liées à la checkmark
 .menu-card {
 
     &__wrapper {
 
         display: flex;
         background-color: #fff;
-        /**
-            * ici on va utiliser des `rem` (root element font size), cela signifie que l'on prend pour mesure initiale la taille de la police du document HTML;
-            * utiliser des rem permet de définir des valeurs relatives à une taille de police initiale, qui ne change jamais
-        */
         height: 5rem;
         margin: 1rem 0;
         border-radius: 0.75rem;
-        // ajout d'une ombre avec la propriété box-shadow
-        box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%); // `rgb(0 0 0 / 10%)` signifie "noir avec une opacité de 10%"
+        box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%); 
         overflow: hidden;
         cursor: pointer;
-        max-width: 100%; // on s'assure que cette div ne dépassera pas en largeur la div parente
+        max-width: 100%;
         
         &__text-content {
-            flex: 1; // flex en tant que propriété ici permet de définir le ratio en largeur que prend le texte dans la carte de menu
+            flex: 1;
             padding: 1rem;
-            text-overflow: ellipsis; // c'est ce qui va permettre d'afficher le tronquage du texte quand la div du texte se rétrécit
-            overflow: hidden; // c'est qui permet de faire en sorte que les éléments ne "sortent" jamais de leur div
-            white-space: nowrap; // ceci permet au texte de ne jamais passer à la ligne
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
 
             h4, p {
                 margin: 0;
@@ -631,9 +625,6 @@ html, body {
 
         &__price {
             display: flex;
-            /**
-                * mettre l'affichage du prix en flex-end le pousse vers la droite de la carte de menu
-            */
             align-items: flex-end;
             font-weight: 700;
             padding: 1rem;
@@ -642,20 +633,12 @@ html, body {
         }
 
         &__checkbox-div {
-            /**
-                * les margin utilisées pour placer la div contenant le marquage l'icône de checkbox
-                    * ici on utilise une marge négative pour le top afin de "pousser" la sous div au centre
-                    * de même, on utilise un marge négative pour la droite afin de 
-                        * "tirer" la sous div de l'icône et laisser de l'espace au texte du prix
-                        * faire sortir la div de checkmark en dehors de l'écran sur la droite
-            */
             margin: -0.6rem -5rem 0 1rem;
             background-color: #99e2d0;
             width: 4rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            // c'est cette transition qui donne l'effet de défilement de la div contenant le marquage l'icône de checkbox 
             transition-duration: .5s;
 
             &__icon-wrapper {
@@ -666,7 +649,7 @@ html, body {
                 justify-content: center;
                 height: 1.6rem;
                 width: 1.6rem;
-                transform: rotate(180deg); // à la base l'icône est retournée, c'est la transition qui va animer la checkmark
+                transform: rotate(180deg);
                 transition-duration: .5s;
 
                 &__icon {
@@ -677,14 +660,15 @@ html, body {
         }
 
         &:hover .menu-card__wrapper__checkbox-div {
-            margin-right: 0rem; // au survol la checkmark revient au centre de l'écran
+            margin-right: 0rem;
         }
 
         &:hover .menu-card__wrapper__checkbox-div__icon-wrapper {
-            transform: rotate(0); // au survol, l'icône est retournée pour avoir son angle normal
+            transform: rotate(0);
         }
     }
 }
+
 
 
 
