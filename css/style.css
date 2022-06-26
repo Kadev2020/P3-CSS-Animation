@@ -1,70 +1,73 @@
-@charset "UTF-8";
-/* .lds-ring {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
 }
+
 .lds-ring div {
-    box-sizing: border-box;
-    display: block;
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    margin: 8px;
-    border: 8px solid #fff;
-    border-radius: 50%;
-    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: #fff transparent transparent transparent;
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
 }
+
 .lds-ring div:nth-child(1) {
-    animation-delay: -0.45s;
+  animation-delay: -0.45s;
 }
+
 .lds-ring div:nth-child(2) {
-    animation-delay: -0.3s;
+  animation-delay: -0.3s;
 }
+
 .lds-ring div:nth-child(3) {
-    animation-delay: -0.15s;
+  animation-delay: -0.15s;
 }
+
 @keyframes lds-ring {
-    0% {
+  0% {
     transform: rotate(0deg);
-    }
-    100% {
+  }
+  100% {
     transform: rotate(360deg);
-    }
+  }
 }
-
 @keyframes loading-overlay {
-    0% {
-        z-index: 2;
-        background-color: rgba(0,0,0,0.5);
-    }
-    99% {
-        z-index: 2;
-        background-color: rgba(0,0,0,0.5);
-    }
-    100% {
-        z-index: -1;
-        background-color: transparent;
-    }
+  0% {
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  99% {
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    z-index: -1;
+    background-color: transparent;
+  }
+}
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: loading-overlay 3s forwards;
 }
 
-#overlay {
-    position: fixed; 
-    width: 100%; 
-    height: 100%; 
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5); 
-    z-index: 2; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: loading-overlay 3s forwards;
-} */
 html, body {
   margin: 0;
   padding: 0;
@@ -160,7 +163,6 @@ html header #header-explorer, body header #header-explorer {
 html header #header-explorer > p:first-child, body header #header-explorer > p:first-child {
   font-size: x-large;
   font-weight: 800;
-  /* TODO centrer 2e ligne */
 }
 html header #header-explorer > p:nth-child(2), body header #header-explorer > p:nth-child(2) {
   font-size: larger;
@@ -533,10 +535,6 @@ html footer #footer-menu #footer-restaurant, html footer #footer-menu #footer-pa
 .menu-card__wrapper {
   display: flex;
   background-color: #fff;
-  /**
-      * ici on va utiliser des `rem` (root element font size), cela signifie que l'on prend pour mesure initiale la taille de la police du document HTML;
-      * utiliser des rem permet de définir des valeurs relatives à une taille de police initiale, qui ne change jamais
-  */
   height: 5rem;
   margin: 1rem 0;
   border-radius: 0.75rem;
@@ -567,9 +565,6 @@ html footer #footer-menu #footer-restaurant, html footer #footer-menu #footer-pa
 }
 .menu-card__wrapper__price {
   display: flex;
-  /**
-      * mettre l'affichage du prix en flex-end le pousse vers la droite de la carte de menu
-  */
   align-items: flex-end;
   font-weight: 700;
   padding: 1rem;
@@ -577,13 +572,6 @@ html footer #footer-menu #footer-restaurant, html footer #footer-menu #footer-pa
   font-family: "Roboto", sans-serif;
 }
 .menu-card__wrapper__checkbox-div {
-  /**
-      * les margin utilisées pour placer la div contenant le marquage l'icône de checkbox
-          * ici on utilise une marge négative pour le top afin de "pousser" la sous div au centre
-          * de même, on utilise un marge négative pour la droite afin de 
-              * "tirer" la sous div de l'icône et laisser de l'espace au texte du prix
-              * faire sortir la div de checkmark en dehors de l'écran sur la droite
-  */
   margin: -0.6rem -5rem 0 1rem;
   background-color: #99e2d0;
   width: 4rem;
