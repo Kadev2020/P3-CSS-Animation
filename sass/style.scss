@@ -1,7 +1,6 @@
 $primary_color : #9356DC;
 $secondary_color : #FF79DA;
 $tertiary_color : #99E2D0;
-$mixed_color : #9356DC, #FF79DA;
 
 .lds-ring {
     display: inline-block;
@@ -171,7 +170,6 @@ html, body {
             & > p:first-child{
                 font-size: x-large;
                 font-weight: 800;
-                /* TODO centrer 2e ligne */
             }
             & > p:nth-child(2){
                 font-size: larger;
