@@ -209,6 +209,12 @@ html #main-index .main-list p, body #main-index .main-list p {
   font-weight: 600;
   padding-right: 30px;
 }
+html #main-index .main-list:hover, body #main-index .main-list:hover {
+  background-color: #f2eafb;
+}
+html #main-index .main-list:hover span i, body #main-index .main-list:hover span i {
+  color: #9356DC;
+}
 html #main-index #main-menu, body #main-index #main-menu {
   width: 100%;
   height: auto;
